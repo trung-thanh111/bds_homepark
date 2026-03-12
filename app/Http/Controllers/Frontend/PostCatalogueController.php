@@ -15,6 +15,7 @@ use Jenssegers\Agent\Facades\Agent;
 use App\Models\Introduce;
 use App\Models\Post;
 use App\Repositories\Post\PostRepository;
+use App\Services\V2\Impl\RealEstate\PropertyService;
 use App\View\Components\TableOfContents;
 
 class PostCatalogueController extends FrontendController
@@ -27,6 +28,7 @@ class PostCatalogueController extends FrontendController
     protected $widgetService;
     protected $slideService;
     protected $postRepository;
+    protected $propertyService;
 
     public function __construct(
         PostCatalogueRepository $postCatalogueRepository,
@@ -34,7 +36,8 @@ class PostCatalogueController extends FrontendController
         PostService $postService,
         WidgetService $widgetService,
         SlideService $slideService,
-        PostRepository $postRepository
+        PostRepository $postRepository,
+        PropertyService $propertyService
     ) {
         $this->postCatalogueRepository = $postCatalogueRepository;
         $this->postCatalogueService = $postCatalogueService;
@@ -42,6 +45,7 @@ class PostCatalogueController extends FrontendController
         $this->widgetService = $widgetService;
         $this->slideService = $slideService;
         $this->postRepository = $postRepository;
+        $this->propertyService = $propertyService;
         parent::__construct();
     }
 
@@ -95,7 +99,8 @@ class PostCatalogueController extends FrontendController
             ['order', 'desc']
         )->take(4);
 
-        $property = $this->postCatalogueRepository->getPostCatalogueById($postCatalogue->parent_id, $this->language);
+        $property = $this->propertyService->findByCondition([['publish', 2]]);
+
         $template = 'frontend.post.catalogue.index';
 
         $config = $this->config();

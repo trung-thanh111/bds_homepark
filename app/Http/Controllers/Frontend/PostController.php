@@ -10,6 +10,7 @@ use App\Services\V1\Post\PostService;
 use App\Repositories\Post\PostRepository;
 use App\Services\V1\Core\WidgetService;
 use App\Models\Post;
+use App\Services\V2\Impl\RealEstate\PropertyService;
 
 class postController extends FrontendController
 {
@@ -20,6 +21,7 @@ class postController extends FrontendController
     protected $postService;
     protected $postRepository;
     protected $widgetService;
+    protected $propertyService;
 
     public function __construct(
         PostCatalogueRepository $postCatalogueRepository,
@@ -27,12 +29,14 @@ class postController extends FrontendController
         PostService $postService,
         PostRepository $postRepository,
         WidgetService $widgetService,
+        PropertyService $propertyService
     ) {
         $this->postCatalogueRepository = $postCatalogueRepository;
         $this->postCatalogueService = $postCatalogueService;
         $this->postService = $postService;
         $this->postRepository = $postRepository;
         $this->widgetService = $widgetService;
+        $this->propertyService = $propertyService;
         parent::__construct();
     }
 
@@ -62,7 +66,7 @@ class postController extends FrontendController
             ['order', 'desc']
         )->take(4);
 
-        $property = $this->postCatalogueRepository->getPostCatalogueById(0, $this->language);
+        $property = $this->propertyService->findByCondition([['publish', '=', 2]]);
 
         $breadcrumb = [];
         $postCatalogue = null;
