@@ -47,7 +47,7 @@ Route::group(['middleware' => ['locale']], function () {
     Route::get('tien-nghi.html', [AmenitiesController::class, 'index'])->name('amenities.index');
     Route::get('xung-quanh.html', [NeighbourhoodController::class, 'index'])->name('neighbourhood.index');
     Route::get('lien-he.html', [ContactController::class, 'index'])->name('contact.index');
-    Route::get('bai-viet.html', [PostController::class, 'index'])->name('post.index');
+    Route::get('bai-viet.html', [PostController::class, 'index'])->name('fe.post.index');
     Route::post('ajax/visit-request/store', [VisitRequestController::class, 'store'])->name('visit-request.store');
     Route::get('/thumb', [App\Http\Controllers\ImageResizerController::class, 'resize'])->name('thumb');
 

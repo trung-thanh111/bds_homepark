@@ -9,7 +9,7 @@
         <div class="hp-luxury-header__content">
             <div class="uk-container uk-container-center">
                 <div class="hp-luxury-header__title-wrap" data-reveal="up">
-                    <h1 class="hp-luxury-header__title">{{ $property->title ?? 'Linden Residence' }}</h1>
+                    <h1 class="hp-luxury-header__title">{{ $property->title ?? 'Homepark Residence' }}</h1>
                     <p class="hp-luxury-header__desc hp-hero-subtitle-main">
                         {{ $property->description_short ?? 'Không gian sống sang trọng được thiết kế dành cho cuộc sống hiện đại.' }}
                     </p>

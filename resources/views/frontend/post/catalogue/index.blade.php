@@ -5,7 +5,7 @@
     <div id="scroll-progress"></div>
     <div class="linden-page">
         <section class="hp-luxury-header"
-            style="background-image: url('{{ isset($property) && $property->image ? $property->image : (isset($postCatalogue) && $postCatalogue->image ? $postCatalogue->image : asset('frontend/resources/img/homely/slider/1.webp')) }}');">
+            style="background-image: url('{{ $property->image ?? asset('frontend/resources/img/homely/slider/1.webp') }}');">
             <div class="hp-hero-overlay"></div>
             <div class="hp-luxury-header__content">
                 <div class="uk-container uk-container-center">
