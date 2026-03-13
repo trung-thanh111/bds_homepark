@@ -6,30 +6,21 @@
 
 html,
 body {
-    overflow-x: hidden;
     width: 100%;
 }
 
 :root {
-
     --color-primary: #c8a97e;
-
     --color-primary-dark: #a8835a;
     --color-dark: #1a1a2e;
-
     --color-dark-alt: #16213e;
     --color-black: #0d0d1a;
-
-
     --color-white: #ffffff;
     --color-off-white: #f8f6f2;
-
     --color-light-gray: #f0ede8;
     --color-mid-gray: #888888;
     --color-dark-gray: #555555;
     --color-border: #e8e4df;
-
-
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
     --font-accent: 'Montserrat', sans-serif;
@@ -811,7 +802,7 @@ h3 {
 }
 
 .hp-section-padding {
-    padding: 120px 0;
+    padding: 60px 0;
 }
 
 .hp-text-desc {
@@ -1404,7 +1395,7 @@ h3 {
     position: relative;
     background: #fff;
     overflow: visible;
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 .hp-cta-row {
@@ -1563,7 +1554,7 @@ h3 {
 
 
 .hp-news-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: #fff;
 }
 
@@ -2944,4 +2935,31 @@ h3 {
         padding-left: 0;
         margin-top: 50px;
     }
+}
+
+/* Post Content Overrides */
+.hp-content-entry h2 {
+    font-size: 24px !important;
+    margin: 25px 0 15px !important;
+}
+
+.hp-content-entry h3 {
+    font-size: 22px !important;
+    margin: 20px 0 12px !important;
+}
+
+.hp-content-entry h4 {
+    font-size: 18px !important;
+    margin: 15px 0 10px !important;
+}
+
+.hp-content-entry ul {
+    margin: 20px 0 !important;
+    padding-left: 20px !important;
+    list-style-type: disc !important;
+}
+
+.hp-content-entry ul li {
+    margin-bottom: 8px;
+    list-style: disc !important;
 }

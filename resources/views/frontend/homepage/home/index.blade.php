@@ -267,7 +267,13 @@
                     <span class="hp-section-num">03</span>
                     <div class="hp-title-serif">Thư viện hình ảnh</div>
                     <h2 class="hp-subtitle-dark">Không gian sống sang trọng & đẳng cấp</h2>
-
+                    <p class="hp-text-desc uk-margin-large-bottom">
+                        Từng góc nhỏ trong căn hộ đều được chăm chút kỹ lưỡng, mang lại cảm giác ấm cúng nhưng không kém
+                        phần sang trọng.
+                    </p>
+                    <p>
+                        {!! $property->description ?? '' !!}
+                    </p>
                     <a href="#" class="hp-link-gallery-all">
                         Xem tất cả ảnh <i class="fa fa-caret-right"></i>
                     </a>
